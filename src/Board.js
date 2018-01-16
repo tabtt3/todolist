@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Card from './Card';
 
 class Board extends React.Component {
@@ -13,8 +12,8 @@ class Board extends React.Component {
   render() {
     return(
       <div className="board">
-        <Card />
-        <Card />
+        { this.renderCard() }
+        { this.renderCard() }
       </div>
     );
   }
