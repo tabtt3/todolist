@@ -5,8 +5,7 @@ import TaskDetail from './TaskDetail';
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.value)
-    console.log(props.value)
+
     this.state = {
       name   : "task No" + this.props.value,
       detail : "this is No" + this.props.value + "task",
