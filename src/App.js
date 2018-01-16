@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Board from './Board';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +14,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <body>
+          <Board />
+        </body>
       </div>
     );
   }
