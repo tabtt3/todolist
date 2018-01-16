@@ -3,17 +3,17 @@ import Card from './Card';
 
 class Board extends React.Component {
 
-  renderCard() {
+  renderCard(i) {
     return(
-      <Card />
+      <Card value={i} />
     );
   }
 
   render() {
     return(
       <div className="board">
-        { this.renderCard() }
-        { this.renderCard() }
+        { this.renderCard(1) }
+        { this.renderCard(2) }
       </div>
     );
   }
