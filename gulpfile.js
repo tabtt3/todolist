@@ -8,5 +8,5 @@ gulp.task("default", () => {
 gulp.task("sass", () => {
   gulp.src("src/sass/index.scss")
     .pipe(sass())
-    .pipe(gulp.dest("./src/dist"))
+    .pipe(gulp.dest("./src/css"))
 });
