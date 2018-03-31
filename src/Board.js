@@ -1,48 +1,56 @@
 import React from 'react'
-import Card from './Card'
-import Button from './Button'
+import TaskList from './TaskList'
 
 export default class Board extends React.Component {
 
   constructor(props) {
     super(props)
 
-    this.state = {
-      title: 'this is task title',
-      detail: 'this is task detail',
-      statusCode: 10,
-    }
+    this.state = [
+      {
+        title: 'this is taskNo1 title',
+        //detail: 'this is taskNo1 detail',
+        statusCode: 0,
+        //checked: true,
+      },
+      {
+        title: 'this is taskNo2 title',
+        //detail: 'this is taskNo1 detail',
+        statusCode: 10,
+        //checked: true,
+      },
+      {
+        title: 'this is taskNo3 title',
+        //detail: 'this is taskNo2 detail',
+        statusCode: 99,
+        //checked: false,
+      }
+    ]
   }
 
-  taskStatus(statusCode) {
-    switch(statusCode) {
+  transitionStatus(currentStatus) {
+    switch(currentStatus) {
       case 0:
-        return '未着手'
+        return console.log('status changed')
       case 10:
-        return '作業中'
+        return console.log('status changed')
       case 99:
-        return '完了'
+        return console.log('status changed')
     }
   }
 
   render() {
     const onClick = () => {
-      console.log('test')
+      this.setState({ checked: !this.state.checked})
     }
 
     return(
       <div className="board">
-
-        <Card
-          title={this.state.title}
-          detail={this.state.detail}
-          status={this.taskStatus(this.state.statusCode)}
-        />
-
-        <Button
+        <TaskList
+          tasks={this.state}
           onClick={onClick}
+          transitionStatus={this.transitionStatus}
         />
-
       </div>
     );
   }
